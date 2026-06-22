@@ -7,14 +7,14 @@ import argparse
 
 
 def format_year(year):
-    if year > 9 and year < 21:
-        return "лет"
-    elif year % 10 in (5, 6, 7, 8, 9, 0):
+    if 11 <= year % 100 <= 19:
         return "лет"
     elif year % 10 == 1:
         return "год"
-    else:
+    elif year % 10 in (2, 3, 4):
         return "года"
+    else:
+        return "лет"
 
 
 def main():
